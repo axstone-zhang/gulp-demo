@@ -1,0 +1,13 @@
+footer {
+  background-color: #f40; }
+
+header {
+  background: #000; }
+
+body {
+  background-color: #f40; }
+
+body p {
+  font-size: 18px;
+  color: blue;
+  border-bottom: 1px solid #000; }
