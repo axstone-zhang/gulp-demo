@@ -5,13 +5,13 @@
 > npm install -g gulp 全局安装
 > npm install gulp --save-dev 局部安装 
 
-1. 1.命令行创建npm的配置文件
+1. 命令行创建npm的配置文件
   > npm init
-2. 2.添加一个gulp的依赖
+2. 添加一个gulp的依赖
   > npm install gulp --save-dev
-3. 3.在项目根目录下添加一个gulpfile.js文件，这个是gulp的主文件，这个文件名是固定的
-4. 4.在gulpfile中抽象我们需要做的任务
-5. 5.gulpfile.js内容
+3. 在项目根目录下添加一个gulpfile.js文件，这个是gulp的主文件，这个文件名是固定的
+4. 在gulpfile中抽象我们需要做的任务
+5. gulpfile.js内容
 
 ### 引入 gulp及组件
 
@@ -123,12 +123,12 @@ gulp.task('watch',function(){
 });
 ```
 
-6. 6.安装组件
+6. 安装组件
 `
 npm install gulp-util gulp-imagemin gulp-ruby-sass gulp-minify-css gulp-jshint gulp-uglify gulp-rename gulp-concat gulp-clean gulp-livereload tiny-lr --save-dev
 `
 
-7. 7.项目目录
+7. 项目目录
 ```
 project(项目名称)
 |–.git 通过git管理项目会生成这个文件夹
@@ -147,10 +147,8 @@ project(项目名称)
 |–gulpfile.js gulp任务文件
 ```
 
-8. 8.通过npm安装http-server，快速建立http服务
-`npm install http-server -g`
 
-9. 9.通过cd找到发布环境目录dist
+9. 通过cd找到发布环境目录project
 
 > 再打开一个cmd，通过cd找到项目路径执行gulp，清空发布环境并初始化
 > 执行监控 gulp run dev
