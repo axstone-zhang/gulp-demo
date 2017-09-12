@@ -1,17 +1,19 @@
-#项目创建过程
-全局安装gulpjs
-`npm install -g gulp 全局安装` 
-`npm install gulp --save-dev 局部安装`
+# 项目创建过程
 
-1. 命令行创建npm的配置文件
-  a. npm init
-2. 添加一个gulp的依赖
-  npm install gulp --save-dev
-3. 在项目根目录下添加一个gulpfile.js文件，这个是gulp的主文件，这个文件名是固定的
-4. 在gulpfile中抽象我们需要做的任务
-5. gulpfile.js内容
-`// 引入 gulp及组件
-var gulp    = require('gulp'),                 //基础库
+#### 全局安装gulpjs
+
+> npm install -g gulp 全局安装 
+> npm install gulp --save-dev 局部安装 
+
+1. 1 命令行创建npm的配置文件
+   ` npm init`
+2. 2 添加一个gulp的依赖
+  `npm install gulp --save-dev`
+3. 3 在项目根目录下添加一个gulpfile.js文件，这个是gulp的主文件，这个文件名是固定的
+4. 4 在gulpfile中抽象我们需要做的任务
+5. 5 gulpfile.js内容
+`引入 gulp及组件
+ var gulp    = require('gulp'),                 //基础库
     imagemin = require('gulp-imagemin'),       //图片压缩
     sass = require('gulp-ruby-sass'),          //sass
     minifycss = require('gulp-minify-css'),    //css压缩
@@ -25,7 +27,7 @@ var gulp    = require('gulp'),                 //基础库
     port = 35729,
     livereload = require('gulp-livereload');   //livereload
 
-// HTML处理
+HTML处理
 gulp.task('html', function() {
     var htmlSrc = './src/*.html',
         htmlDst = './dist/';
@@ -35,7 +37,7 @@ gulp.task('html', function() {
         .pipe(gulp.dest(htmlDst))
 });
 
-// 样式处理
+样式处理
 gulp.task('css', function () {
     var cssSrc = './src/scss/*.scss',
         cssDst = './dist/css';
@@ -49,7 +51,7 @@ gulp.task('css', function () {
         .pipe(gulp.dest(cssDst));
 });
 
-// 图片处理
+图片处理
 gulp.task('images', function(){
     var imgSrc = './src/images/**/*',
         imgDst = './dist/images';
@@ -59,7 +61,7 @@ gulp.task('images', function(){
         .pipe(gulp.dest(imgDst));
 })
 
-// js处理
+js处理
 gulp.task('js', function () {
     var jsSrc = './src/js/*.js',
         jsDst ='./dist/js';
@@ -75,18 +77,18 @@ gulp.task('js', function () {
         .pipe(gulp.dest(jsDst));
 });
 
-// 清空图片、样式、js
+清空图片、样式、js
 gulp.task('clean', function() {
     gulp.src(['./dist/css', './dist/js', './dist/images'], {read: false})
         .pipe(clean());
 });
 
-// 默认任务 清空图片、样式、js并重建 运行语句 gulp
+默认任务 清空图片、样式、js并重建 运行语句 gulp
 gulp.task('default', ['clean'], function(){
     gulp.start('html','css','images','js');
 });
 
-// 监听任务 运行语句 gulp watch
+监听任务 运行语句 gulp watch
 gulp.task('watch',function(){
 
     server.listen(port, function(err){
