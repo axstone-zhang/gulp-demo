@@ -147,8 +147,8 @@ project(项目名称)
 |–gulpfile.js gulp任务文件
 ```
 
+8. 执行项目
+> 通过cd找到项目路径执行gulp run dev
 
-9. 通过cd找到发布环境目录project
-
-> 再打开一个cmd，通过cd找到项目路径执行gulp，清空发布环境并初始化
-> 执行监控 gulp run dev
+9. 通过cd找到发布环境目录dist
+> 新建一个命令窗口执行 gulp build 
